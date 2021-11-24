@@ -1,0 +1,34 @@
+*{
+    margin:0;
+    padding:0
+}
+img{
+    border:none;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+$fontsize:20px;
+$lineHeight:30px;
+$colnum:5;
+/* sass-mixin  宏-混合器-公共css样式用宏包裹*/
+@mixin size{
+    width:200px; height:200px;
+}
+@mixin position($posi:relative,$left:200px,$right:200px){
+    position:$posi;
+    left: $left;
+    right:$right;
+}
+
+
+/* 声明变量,赋值一个值是变量。赋值多个值是数组。赋值键值对是map */
+
+/* 函数。区别于mixin，有返回值 */
+$colors:(light:red,dark:balck);
+@function fnColor($key){
+    @return map-get($colors, $key);
+}

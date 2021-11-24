@@ -1,0 +1,94 @@
+@import 'public';
+div{
+    width: 100px;
+    height:200px;
+    background: red;
+}
+/* 使用这种 嵌套选择器*/
+div{
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+}
+div{
+    .header{
+        .mark{
+            width: 100px;
+            height: 100px;
+        }
+    }
+    .footer{
+        font-size: $fontsize;
+    }
+}
+$lineheight:20px;
+
+
+
+/* if判断 */
+@if $fontsize == 20px{
+    .box{
+        font: {
+            size:20px;
+            weight:bold;
+            style:italic;
+        }
+    }
+}@else if $fontsize == 18px{
+    .box{
+        font: {
+            size : 14px;
+            style:none;
+            weight:100;
+        }
+    }
+}@else{
+    .box{
+        header{
+            width: 200px;
+            height: 200px;
+        }
+    }
+}
+
+/* 循环添加样式 */
+
+@for $i from 1 to $colnum{
+    col-#{$i}{
+        width: 100% / $colnum * $i;
+    }
+}
+@for $j from 1 through $colnum{
+    col-#{$j}{
+        width: 100% / $colnum * $j;
+    }
+}
+h2{
+    color:fnColor(light);
+}
+/* 遍历添加样式 */
+$arr: success error warning;
+@each $key in $arr{
+    icon-#{$key}{
+        background-image:url("./img/#{$key}.jpg");
+    }
+}
+
+/* mixin 混合器*/
+h2{
+    @include size;
+    @include position($posi:fixed,$right:1000px);
+}
+
+
+/* 函数。区别于mixin，有返回值 */
+h5{
+    background-color: fnColor(light);
+}
+
+
+/* 继承 - 继承其他选择器中的样式 */
+#pig{
+    @extend h2;
+    color: red;
+}

@@ -1,0 +1,97 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0; }
+
+img {
+  border: none; }
+
+a {
+  text-decoration: none; }
+
+li {
+  list-style: none; }
+
+/* sass-mixin  宏-混合器-公共css样式用宏包裹*/
+/* 声明变量,赋值一个值是变量。赋值多个值是数组。赋值键值对是map */
+/* 函数。区别于mixin，有返回值 */
+div {
+  width: 100px;
+  height: 200px;
+  background: red; }
+
+/* 使用这种 嵌套选择器*/
+div {
+  width: 200px;
+  height: 200px;
+  border: 1px solid red; }
+
+div .header .mark {
+  width: 100px;
+  height: 100px; }
+
+div .footer {
+  font-size: 20px; }
+
+/* if判断 */
+.box {
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic; }
+
+/* 循环添加样式 */
+col-1 {
+  width: 20%; }
+
+col-2 {
+  width: 40%; }
+
+col-3 {
+  width: 60%; }
+
+col-4 {
+  width: 80%; }
+
+col-1 {
+  width: 20%; }
+
+col-2 {
+  width: 40%; }
+
+col-3 {
+  width: 60%; }
+
+col-4 {
+  width: 80%; }
+
+col-5 {
+  width: 100%; }
+
+h2, #pig {
+  color: red; }
+
+/* 遍历添加样式 */
+icon-success {
+  background-image: url("./img/success.jpg"); }
+
+icon-error {
+  background-image: url("./img/error.jpg"); }
+
+icon-warning {
+  background-image: url("./img/warning.jpg"); }
+
+/* mixin 混合器*/
+h2, #pig {
+  width: 200px;
+  height: 200px;
+  position: fixed;
+  left: 200px;
+  right: 1000px; }
+
+/* 函数。区别于mixin，有返回值 */
+h5 {
+  background-color: red; }
+
+/* 继承 - 继承其他选择器中的样式 */
+#pig {
+  color: red; }
